@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signovo — Email Signature Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Signovo</h1>
+    <p>Fill in your details and get a ready-to-use HTML email signature.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <h2>Your details</h2>
+
+      <div class="field">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" placeholder="Віталій Панченко">
+      </div>
+
+      <div class="field">
+        <label for="jobTitle">Job title</label>
+        <input type="text" id="jobTitle" placeholder="Web developer">
+      </div>
+
+      <div class="field-group">
+        <div class="field-group-header">
+          <label>Contacts</label>
+          <button type="button" id="addContact" class="btn btn-secondary btn-small">+ Add contact</button>
+        </div>
+        <div id="contactsList" class="contacts-list"></div>
+      </div>
+
+      <div class="field-group">
+        <div class="field-group-header">
+          <label>Company logo</label>
+          <label class="toggle">
+            <input type="checkbox" id="showLogo" checked>
+            Show logo
+          </label>
+        </div>
+        <div class="field">
+          <label for="logoUrl">Logo image URL</label>
+          <input type="text" id="logoUrl" placeholder="Leave empty to use the default logo">
+        </div>
+        <div class="field">
+          <label for="logoLink">Logo link URL</label>
+          <input type="text" id="logoLink" placeholder="https://example.com">
+        </div>
+        <div class="field">
+          <label for="logoAlt">Logo alt text</label>
+          <input type="text" id="logoAlt" placeholder="Company name">
+        </div>
+        <div class="field">
+          <label for="logoWidth">Logo width (px)</label>
+          <input type="number" id="logoWidth" placeholder="140" min="1">
+        </div>
+      </div>
+    </section>
+
+    <section class="panel output-panel">
+      <h2>Preview</h2>
+      <div class="preview-box">
+        <iframe id="previewFrame" title="Signature preview"></iframe>
+        <p id="previewEmpty" class="preview-empty">Fill in the form to see your signature here.</p>
+      </div>
+
+      <div class="code-header">
+        <h2>HTML code</h2>
+        <button type="button" id="copyBtn" class="btn btn-primary" disabled>Copy code</button>
+      </div>
+      <textarea id="codeOutput" readonly spellcheck="false" placeholder="Your generated HTML will appear here..."></textarea>
+    </section>
+  </main>
+
+  <section class="panel instructions-panel">
+    <h2>How to add your signature</h2>
+
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab-btn active" data-tab="bitrix24" role="tab" aria-selected="true">Bitrix24</button>
+      <button type="button" class="tab-btn" data-tab="gmail" role="tab" aria-selected="false">Gmail</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-bitrix24" role="tabpanel">
+      <div class="video-embed">
+        <!-- Place Bitrix24 tutorial video embed code here (e.g. YouTube/Vimeo iframe) -->
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-gmail" role="tabpanel">
+      <div class="video-embed">
+        <!-- Place Gmail tutorial video embed code here (e.g. YouTube/Vimeo iframe) -->
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
